@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+body {
+    overflow: hidden;
+}
+
+.filter-bar {
+    display: flex;
+    margin-top: 30px;
+}
+
+.sortDiv:first-child {
+    border-radius: 5px 0px 0px 5px;
+    cursor: unset;
+
+}
+.sortDiv:nth-child(2) {
+    cursor: unset;
+
+}
+.sortDiv:last-child {
+    border-radius: 0px 5px 5px 0px;
+}
+.sortDiv svg {
+    width: 15px;
+}
+.sortDiv{
+    user-select: none;
+    background-color: #F8F8F8;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    padding: 20px;
+    border: #D5D5D5 0.3px solid;
+    font-size: 12px;
+    font-family: 'Nunito Sans';
+}
+.filter-bar button {
+    color: #EA0234;
+    font-weight:500;
+}
+.sortDiv p {
+    margin: 0 !important;
+    font-weight: bold;
+}
+.filter-bar button svg {
+    margin-right: 5px;
+}
+.statusDiv svg, .categoryDiv svg{
+    margin-left: 10px;
+}
+.sortDiv label {
+    margin-right: 10px;
+}
+.sortDiv input[type = 'date']{
+    border: 0;
+    background-color: #F8F8F8;
+    font-family: 'Nunito Sans';
+
+}
+.questionmng {
+    display: flex;
+flex-direction: column;
+    height: calc(100% - 60px);
+    margin-left: 15px;
+    font-family: "Nunito Sans", serif;
+}
+
+.category p {
+    font-family: "Roboto", serif;
+    font-size: 13px;
+}
+
+.category .selectNew {
+    font-family: "Roboto", serif;
+    color: #505050;
+    font-size: 15px;
+    padding: 10px;
+    padding-right: 20px;
+    position: relative;
+    width: inherit;
+    width: 100%;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid #B5B5B5;
+    border-radius: 5px;
+}
+
+.category ul {
+    position: absolute;
+    width: inherit;
+    left: -1px;
+    list-style: none;
+    padding-left: 0;
+    box-sizing: content-box;
+    border: 1px solid #B5B5B5;
+    border-radius: 0px 0px 5px 5px;
+    background-color: #fff;
+}
+
+.category li {
+    padding-left: 10px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+.category li:hover {
+    background-color: #929292;
+
+}
+
+.selectNew p {
+    font-size: 15px;
+}
+
+.category {
+    width: 300px;
+    position: relative;
+}
+
+.category .active {
+    rotate: 180deg;
+}
+.select {
+    position: absolute;
+    top: 0;
+    height: 44.5px;
+    right: 10px;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.username input[type = 'text'] {
+    height: 44.5px;
+    font-size: 16px;
+    width: 80%;
+    padding-left: 10px;
+    border: 1px solid #B5B5B5;
+    border-radius: 5px;
+    color: #666666;
+    font-family: "Roboto", serif;
+}
+
+
+.username p {
+    margin-top: 10px;
+    font-family: "Roboto", serif;
+    font-size: 13px;
+}
+
+table {
+    background-color: #FFFFFF;
+    width: calc(100%);
+    font-family: 'Poppins';
+}
+
+table td:nth-child(1),table th:nth-child(1) {
+    min-width: 50px;
+    width: 8%;
+}
+table td:nth-child(2),table th:nth-child(2) {
+    min-width: 100px;
+    justify-content: flex-start ;
+    width: 10%;
+}
+table td:nth-child(3),table th:nth-child(3) {
+    min-width: 150px;
+    width: 15%;
+}
+table td:nth-child(4),table th:nth-child(4) {
+    min-width: 150px;
+    width: 25%;
+}
+table td:nth-child(5),table th:nth-child(5) {
+    min-width: 100px;
+    justify-content: flex-start ;
+    width: 10%;
+}
+table td:nth-child(6),table th:nth-child(6) {
+    min-width: 200px;
+    width: 22%;
+}
+table td:nth-child(7),table th:nth-child(7) {
+    width: 10%;
+    min-width: 100px;
+}
+table td:nth-child(7) svg {
+    cursor: pointer;
+}
+
+table td:nth-child(3), table td:nth-child(4), table td:nth-child(5){
+    opacity: 65%;
+    color: #000;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #D7D7D7; 
+    border-radius: 5px;
+  }
+
+.top-table {
+    margin-top: 20px;
+    width: calc(100% - 20px);
+}
+
+
+.table-div{
+    overflow-y: auto;
+    max-height: 300px;
+    width: calc(100% - 10px);
+    margin-right: 5px;
+    padding-right: 5px;
+}
+
+
+
+tr td:first-child, th:first-child {
+    justify-content: center;
+}
+td label {
+    position: relative;
+}
+td input, #tmp1{
+    border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 1px;
+}
+
+td label, tr label {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    align-items: center;
+}
+td, th {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+
+}
+
+th {
+    font-family: "Lato", serif;
+    font-size: 14px;
+}
+
+td {
+    font-size: 15px;
+    user-select: none;
+
+}
+
+tr, td {
+    display: flex;
+    align-items: center;
+    border-bottom: #F2F2F2 1px solid;
+}
+
+td input:checked + label svg:last-child {
+    position: absolute;
+    display: block !important;
+
+}
+
+.status {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    font-family: 'Nunito Sans';
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.buttons {
+    margin-top: auto;
+    display: flex;
+    margin-bottom: 20px;
+    margin-left: auto;
+}
+
+.bottom-button {
+    cursor: pointer;
+    margin-right: 20px;
+    background-color: #630505;
+    color: #F7F5F4;
+    font-family: "Inter", serif;
+    font-weight: 400;
+    border-radius: 3px;
+    width: 110px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    user-select: none;
+}

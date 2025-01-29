@@ -1,0 +1,60 @@
+.main * {
+    font-family: 'Inter';
+}
+
+.main h2 {
+    color: #7E3223;
+    padding-top: 40px;
+    padding-left: 10px;
+    font-size: 30px;
+    font-weight: 700;
+    padding-bottom: 50px;
+}
+
+.main p {
+    font-weight: 500;
+    font-size: 15px;
+    padding-right: 100px;
+    color: #000000;
+
+}
+
+.main h1 {
+    font-weight: bold;
+    font-size: 60px;
+    line-height: 70px;
+}
+.home .content {
+    width: 50%
+}
+.text {
+    width:80%;
+    max-width: 500px;
+}
+.home .content svg {
+    margin-top: 10px;
+    width: 100%;
+}
+.home .content p {
+    margin-top: 20px;
+    padding: 0;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 20px;
+}
+.main {
+    display: block !important;
+    padding-left: 100px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.start-survey-button {
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #7E3223;
+    color: #fff;
+    width: max-content;
+    padding: 15px 30px;
+    border-radius: 30px;
+}
