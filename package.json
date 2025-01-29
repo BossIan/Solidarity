@@ -1,16 +1,15 @@
 {
-  "name": "mern-application",
+  "name": "solidarity",
   "version": "0.1.0",
   "private": true,
   "homepage": "/",
-  "author": "Ben Elferink <ben.elferink@icloud.com> (https://github.com/BenElferink)",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/BenElferink/mern-template.git"
+    "type": "git"
   },
-  "bugs": {
-    "url": "https://github.com/BenElferink/mern-template/issues",
-    "email": "ben.elferink@icloud.com"
+  "scripts": {
+    "dev": "concurrently --kill-others \"cd client && npm run dev\" \"cd server && npm run dev\""
   },
-  "scripts": {}
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
 }
