@@ -1,6 +1,7 @@
 import axios from 'utils/axios'
 import React, {  useEffect, useRef, useState } from "react"
 import 'styles/questionmng.css'
+const server_url = process.env.SERVER_URL || '';
 import { Question } from '@types';
 var selected = "Category 1";
 
@@ -10,7 +11,7 @@ const QuestionMng = () => {
     const getQuestions = () => {
       return new Promise((resolve, reject) => {
         axios
-          .post('/auth/questions')
+          .post(server_url + '/auth/questions')
           .then(({ data: { data: allQuestions } }) => {
             
             setRows(allQuestions)
@@ -47,7 +48,7 @@ const QuestionMng = () => {
         question: question.value
       }
         axios
-        .post('/auth/add-question', data)
+        .post(server_url + '/auth/add-question', data)
         .then(() => {
           getQuestions()
             .catch(error => {
@@ -75,7 +76,7 @@ const QuestionMng = () => {
         }
         
         axios
-          .post('/auth/archive-question', data)
+          .post( server_url + '/auth/archive-question', data)
           .then(() => {
             getQuestions()
             .catch(error => {
@@ -90,7 +91,7 @@ const QuestionMng = () => {
       } else {
         data.push(e.target.attributes[0].value)
           axios
-          .post('/auth/archive-question', data)
+          .post( server_url + '/auth/archive-question', data)
           .then(() => {
             getQuestions()
             .catch(error => {

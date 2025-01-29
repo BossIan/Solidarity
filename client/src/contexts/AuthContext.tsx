@@ -1,6 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, type PropsWithChildren, useMemo } from 'react'
 import axios from 'utils/axios'
+
 import { type FormData, type Account } from '@types'
+const server_url = process.env.SERVER_URL || '';
 
 interface Context {
   token: string | null
@@ -37,7 +39,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     
     return new Promise((resolve, reject) => {
       axios
-        .post('/auth/register', formData)
+        .post(server_url +'/auth/register', formData)
         .then(({ data: { data: accountData, token: accessToken } }) => {
           setAccount(accountData)
           setToken(accessToken)
@@ -54,7 +56,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     delete formData.school
     return new Promise((resolve, reject) => {
       axios
-        .post('/auth/login', formData)
+        .post(server_url + '/auth/login', formData)
         .then(({ data: { data: accountData, token: accessToken } }) => {
           setAccount(accountData)
           setToken(accessToken)
@@ -77,7 +79,7 @@ export const AuthProvider = ({ children }: PropsWithChildren) => {
     try {
       const {
         data: { data: accountData, token: accessToken },
-      } = await axios.get('/auth/login', {
+      } = await axios.get( server_url + '/auth/login', {
         headers: {
           authorization: `Bearer ${token}`,
         },

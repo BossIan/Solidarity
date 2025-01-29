@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import '../styles/survey.css'
 import axios from 'utils/axios'
-    var i = 0
+const server_url = process.env.SERVER_URL || '';
+var i = 0
     const Survey = () => {
     const [rows, setRows] = useState<any[]>([]);
     const categories = ["Category 1", "Category 2", "Category 3"];
@@ -17,7 +18,7 @@ import axios from 'utils/axios'
     const getQuestions = () => {
         return new Promise((resolve, reject) => {
           axios
-            .post('/auth/questions')
+            .post(server_url + '/auth/questions')
             .then(({ data: { data: allQuestions } }) => {
               
             setRows(allQuestions)
