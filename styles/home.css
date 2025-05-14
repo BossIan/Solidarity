@@ -1,0 +1,51 @@
+.start-survey-button a {
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+}
+
+.home .content {
+    width: 50%
+}
+
+.text {
+    width: 80%;
+    max-width: 500px;
+}
+
+.home .content svg {
+    margin-top: 20px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.home .content p {
+    padding: 0;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.5rem;
+}
+
+.start-survey-button {
+    cursor: pointer;
+    margin-top: 20px;
+    background-color: #7E3223;
+    color: #fff;
+    width: max-content;
+    padding: 15px 30px;
+    border-radius: 30px;
+}
+
+
+.main .text h1 {
+    font-weight: bold;
+    font-size: 5rem;
+    line-height: 5.5rem;
+}
+
+#design1 {
+    position: absolute;
+    width: 35%;
+    right: 0;
+    bottom: 0;
+}

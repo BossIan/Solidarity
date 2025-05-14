@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+.schoolLogo {
+    height: 80%;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.profile p:nth-child(1){
+    margin-inline: 5px;
+    font-family: "Nunito Sans", serif;
+    font-weight: bold;
+}
+.profile p:nth-child(2){
+    margin-inline: 5px;
+    font-family: "Nunito Sans", serif;
+    font-weight: 300;
+    font-size: 0.8rem;
+}
+.text-profile {
+    margin-right: 15px;
+
+}
+

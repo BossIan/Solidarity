@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.dashboard {
+    display: flex;
+    min-height: 100%;
+}
+
+.mainTab {
+    width: 100%;
+    background-color: #F8F8F8;
+}
+

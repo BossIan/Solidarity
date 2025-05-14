@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+#barChart {
+    width: calc(100% - 40px) !important;
+    height: 250px !important;
+}
+
+.graph {
+    background-color: #fFf;
+    flex-direction: column;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #F1F1F1;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.report-gen h1 {
+    font-family: 'Nunito Sans';
+}
+
+.report-gen {
+    margin: 10px;
+}
+
+.graph p {
+    font-family: 'Poppins';
+}
+
+.graph-text {
+    font-weight: 500;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#duration {
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+#doughnut {
+    width: 20% !important;
+    min-width: 200px;
+    height: 100% !important;
+}
+
+.doughdiv {
+    width: min-content;
+    padding-inline: 50px;
+}
+
+.labels {
+    display: flex;
+    margin-top: 20px;
+}
+
+.label p:first-child {
+    display: list-item;
+    color: rgba(0, 0, 0, 0.38);
+    font-size: .9rem;
+}
+
+
+
+.label p:last-child {
+    font-size: 1.1rem;
+}
+
+.label p::marker {
+    color: var(--marker-color);
+}
+
+.label {
+    font-family: 'Roboto';
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-self: center;
+    padding-left: 20px;
+    margin-right: 20px;
+}
+
+
+.mainTab {
+    width: 80% !important;
+}
+.overflow {
+    overflow-x: auto ;
+    max-width: 100% ; 
+}
+
+.response-table {
+    width: max-content ;
+    overflow-x: auto;
+}
+
+.response-table th,
+.response-table td {
+    font-family: "Lato", serif;
+    padding: 20px;
+    table-layout: auto;
+    font-size: 14px;
+    text-align: center;
+}
+
+.response-table th {
+    background-color: #f5f5f5;
+}
+
+button {
+    margin-top: 50px;
+    display: block;
+    cursor: pointer;
+    padding-block: 7px;
+    background-color: #630505;
+    width: 130px;
+    font-family: "Lato", serif;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 20px;
+    border-radius: 20px;
+    user-select: none;
+    color: #FFFFF0;
+    border: 0;
+    text-decoration: none;
+}
+

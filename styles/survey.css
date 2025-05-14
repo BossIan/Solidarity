@@ -1,0 +1,83 @@
+.surveyh1 {
+    font-size: 30px !important;
+    font-weight: bolder;
+    margin-top: 20px;
+    line-height: unset;
+}
+
+span {
+    font-weight: 500;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.choices {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+.questions {
+    height: 60vh;
+    overflow-y: auto;
+}
+.question {
+    margin-right: 100px;
+    margin-top: 20px;
+    
+}
+.choice {
+    display: flex;
+    flex-direction: column;
+   align-items: center;
+   z-index: 10;
+}
+
+.choice label {
+    user-select: none;
+
+    padding: 0;
+    margin-bottom: 10px;
+    user-select: none;
+}
+.choice svg {
+    cursor: pointer;
+}
+
+.bar {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 19px;
+    background-color: #D9D9D9;
+    border-radius: 10px;
+}
+
+.check {
+    position: absolute;
+    bottom: 0;
+}
+.next {
+    margin-top: 50px;
+    display: block;
+    cursor: pointer;
+    padding-block: 7px;
+    background-color: #630505;
+    width: 130px;
+    text-align: center;
+    font-size: 12px;
+    margin-right: 20px;
+    border-radius: 20px;
+    user-select: none;
+    color: #FFFFF0;
+    border: 0;
+    text-decoration: none;
+}
+.disabled {
+cursor: unset;
+}
+
+.bottom-btn {
+    display: flex;
+    margin-left: auto;
+}
