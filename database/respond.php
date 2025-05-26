@@ -1,8 +1,6 @@
 <?php
 include 'db.php';
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    session_start();
-
     foreach ($_POST['choice'] as $question_id => $response) {
         $_SESSION['responses'][$question_id] = intval($response);
     }

@@ -46,9 +46,68 @@ $accounts = $result->fetch_all(MYSQLI_ASSOC);
             <div class="report-gen">
                 <h1>Report Generation</h1>
                 <div class="overflow">
-                    <table class="response-table" id="responses">
+                    <table class="response-table" id="responses-summarized">
                         <tr>
-                            <th>Email</th>
+                            <th>Name</th>
+                            <?php
+                            $stmt = $conn->prepare("SELECT DISTINCT category FROM questions");
+                            $stmt->execute();
+                            $result = $stmt->get_result();
+                            $category = $result->fetch_all(MYSQLI_ASSOC);
+                            foreach ($category as $key => $value):
+                                ?>
+                                <th><?php echo $value['category'] ?></th>
+                            <?php endforeach ?>
+                        </tr>
+                        <!-- <tr>
+                            <td>Total</td>
+                            <?php foreach ($category as $key => $value): ?>
+                                <?php
+                                $stmt = $conn->prepare("SELECT COUNT(*) AS total FROM questions WHERE category = ?");
+                                $stmt->bind_param("s", $value['category']);
+                                $stmt->execute();
+                                $result = $stmt->get_result();
+                                $row = $result->fetch_assoc();
+                                $total = $row['total'];
+                                ?>
+                                <td><?php echo $total * 5 ?></td>
+                            <?php endforeach ?>
+                        </tr> -->
+                        <?php foreach ($accounts as $account): ?>
+                            <tr>
+                                <td><?php echo htmlspecialchars($account['name']); ?></td>
+                                <?php
+                                foreach ($category as $key => $value): ?>
+                                    <?php
+                                    $stmt = $conn->prepare("
+                                    SELECT r.response_data, r.question_id
+                                    FROM responses r
+                                    JOIN questions q ON r.question_id = q.question_id
+                                    WHERE r.account_id = ? AND q.status = 'Active' AND q.category = ?
+                                ");
+                                    $stmt->bind_param("is", $account['id'], $value['category']);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+                                    $responses = $result->fetch_all(MYSQLI_ASSOC);
+                                    $ave = 0;
+                                    foreach ($responses as $response) {
+                                        $ave += $response['response_data'];
+                                    }
+                                    $stmt = $conn->prepare("SELECT COUNT(*) AS total FROM questions WHERE category = ?");
+                                    $stmt->bind_param("s", $value['category']);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+                                    $row = $result->fetch_assoc();
+                                    $total = $row['total'];
+                                    ?>
+                                    <td><?=  number_format($ave / $total, 1) ?></td>
+                                <?php endforeach ?>
+                            </tr>
+                        <?php endforeach ?>
+                    </table>
+                    <table class="response-table" id="responses" style="display: none">
+                        <tr>
+                            <th>Name</th>
                             <?php foreach ($questions as $key => $value):
                                 ?>
                                 <th><?php echo $value['question'] ?></th>
@@ -57,7 +116,7 @@ $accounts = $result->fetch_all(MYSQLI_ASSOC);
                         </tr>
                         <?php foreach ($accounts as $account): ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($account['email']); ?></td>
+                                <td><?php echo htmlspecialchars($account['name']); ?></td>
                                 <?php
                                 $stmt = $conn->prepare("
                                     SELECT r.response_data, r.question_id

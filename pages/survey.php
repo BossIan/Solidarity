@@ -94,7 +94,7 @@ $questions = $result->fetch_all(MYSQLI_ASSOC);
                                     <p><?= htmlspecialchars($row['question']) ?></p>
                                     <div class="choices">
                                         <?php
-                                        $choices = ["Strongly Disagree", "Disagree", "Neutral", "Agree"];
+                                        $choices = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
                                         foreach ($choices as $key => $label): ?>
                                             <label>
                                                 <input type="radio" name="choice[<?= $row['question_id'] ?>]" value="<?= $key + 1 ?>" required disabled <?= ($rowres['response_data'] == $key + 1) ? 'checked' : ''  ?>>
@@ -112,7 +112,7 @@ $questions = $result->fetch_all(MYSQLI_ASSOC);
                                     <p><?= htmlspecialchars($row['question']) ?></p>
                                     <div class="choices">
                                         <?php
-                                        $choices = ["Strongly Disagree", "Disagree", "Neutral", "Agree"];
+                                        $choices = ["Strongly Disagree", "Disagree", "Neutral", "Agree", "Strongly Agree"];
                                         foreach ($choices as $key => $label):
                                             ?>
                                             <label>
