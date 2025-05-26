@@ -100,7 +100,7 @@ $accounts = $result->fetch_all(MYSQLI_ASSOC);
                                     $row = $result->fetch_assoc();
                                     $total = $row['total'];
                                     ?>
-                                    <td><?=  number_format($ave / $total, 1) ?></td>
+                                    <td><?= number_format($ave / $total, 1) ?></td>
                                 <?php endforeach ?>
                             </tr>
                         <?php endforeach ?>
@@ -116,7 +116,7 @@ $accounts = $result->fetch_all(MYSQLI_ASSOC);
                         </tr>
                         <?php foreach ($accounts as $account): ?>
                             <tr>
-                                <td><?php echo htmlspecialchars($account['name']); ?></td>
+                                <td id="str"><?php echo htmlspecialchars($account['name']); ?></td>
                                 <?php
                                 $stmt = $conn->prepare("
                                     SELECT r.response_data, r.question_id

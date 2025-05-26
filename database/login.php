@@ -34,10 +34,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: ../index.php");
             exit();
         } else {
-            echo "Incorrect password.";
+            echo "<script>
+        alert('Error: Incorrect Password.');
+        window.location.href = '../login.php';
+        </script>";
         }
     } else {
-        echo "User not found.";
+        echo "<script>
+        alert('Error: User not found.');
+        window.location.href = '../login.php';
+        </script>";
     }
 
     $stmt->close();

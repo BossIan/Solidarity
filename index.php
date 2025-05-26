@@ -41,7 +41,6 @@ $page = $_GET['page'] ?? 'Home';
                 <div><a href="?page=Home" class="<?= $page === 'Home' ? 'active' : '' ?>">Home</a></div>
                 <div><a href="?page=Survey" class="<?= $page === 'Survey' ? 'active' : '' ?>">Survey</a></div>
                 <div><a href="?page=About us" class="<?= $page === 'About us' ? 'active' : '' ?>">About Us</a></div>
-                <div><a href="./Question%20Management.php">Dashboard</a></div>
             <?php endif; ?>
 
         </div>

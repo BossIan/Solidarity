@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php 
+<?php
 include './database/db.php';
 if (isset($_SESSION['user_name']) && isset($_SESSION['user_id'])) {
-echo $_SESSION['user_name'];
-header("Location: ./index.php"); 
+    echo $_SESSION['user_name'];
+    header("Location: ./index.php");
 }
 ?>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,16 +42,17 @@ header("Location: ./index.php");
                 <form action="./database/register.php" method="POST">
                     <div class="input" style="margin-top: 1rem;">
                         <label for="name">Full Name</label>
-                        <input id="name" name="name" placeholder="John Doe" type="type">
+                        <input onchange="nameToLower()" id="name" name="name" placeholder="John Doe" type="type"
+                            required>
                     </div>
                     <div class="input">
                         <label for="email">Email</label>
-                        <input id="email"  name="email"  placeholder="Email or phone number" type="email">
+                        <input id="email" name="email" placeholder="Email or phone number" type="email" required>
                     </div>
                     <div class="input">
                         <label for="password">Password</label>
                         <div style="margin-top: 1rem; display:flex">
-                            <input id="password"  name="password" placeholder="Enter password" type="password">
+                            <input id="password" name="password" placeholder="Enter password" type="password" required>
 
 
                             <svg onclick="togglePassword(this)" id="eye" class='eye' transform="translate(0,0)"
@@ -76,29 +78,39 @@ header("Location: ./index.php");
                         </div>
                     </div>
                     <div class="bulsu">
-                    <label class="switch">
-                        <input onchange="
-                        if (this.checked) { 
-                            document.querySelector('.schoolDiv').classList.add('none');
-                        } else { 
-                            document.querySelector('.schoolDiv').classList.remove('none');
-                        }
+                        <label class="switch">
+                            <input onchange="
+                                if (this.checked) { 
+                                    document.querySelector('.schoolDiv').classList.add('none');
+                                    document.getElementById('schoolName').removeAttribute('required');
+                                document.getElementById('schoolName').value = ''; 
+                                } else { 
+                                    document.querySelector('.schoolDiv').classList.remove('none');
+                                    document.getElementById('schoolName').setAttribute('required', '');
+                                }
                         " id="bulsu" type="checkbox">
-                        <span class="slider round"></span>
-                    </label>
-                    <label style="margin-left: 10px" for="bulsu">Are you a Bulacan State University Student?</label>
-                    <div class="input schoolDiv" style="margin-top: 1rem;">
-                        <label for="schoolName">School Name</label>
-                        <input id="schoolName"  name="schoolName"  placeholder="School Name" type="text">
+                            <span class="slider round"></span>
+                        </label>
+                        <label style="margin-left: 10px" for="bulsu">Are you a Bulacan State University Student?</label>
+                        <div class="input schoolDiv" style="margin-top: 1rem;">
+                            <label for="schoolName">School Name</label>
+                            <input id="schoolName" name="schoolName" placeholder="School Name" type="text" required>
+                        </div>
                     </div>
-                </div>
-                <button type="submit" class="signInBtn">
-                    Sign Up
-                </button>
-                </form>
-              
+                    <button type="submit" class="signInBtn">
+                        Sign Up
+                    </button>
+                    <script>
+                        function nameToLower() {
+                            document.getElementById('name').value = document.getElementById('name').value.toLowerCase().replace(/\b\w/g, c => c.toUpperCase());
+                            console.log(document.getElementById('name').value);
 
-           
+                        }
+                    </script>
+                </form>
+
+
+
                 <p style="text-align: center">Already have an account? <a style="color: #742616;"
                         href="./login.php">Login now</a>
                 </p>
